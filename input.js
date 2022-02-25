@@ -2,6 +2,7 @@
 // Stores the active TCP connection object
 let connection;
 
+// Setup for user input
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -15,7 +16,9 @@ const setupInput = function(conn) {
   return stdin;
 };
 
+// Function to handle user input
 const handleUserInput = function(key) {
+
   // If key is " Ctrl+ c" exit the program
   if (key === '\u0003') {
     process.exit();
@@ -29,6 +32,14 @@ const handleUserInput = function(key) {
     connection.write("Move: down");
   } else if (key === "d" || key === "D") {
     connection.write("Move: right");
+
+    //special keys to send canned messages to the server
+  } else if (key === "1") {
+    connection.write("Say: Nice");
+  } else if (key === "2") {
+    connection.write("Say: Haha");
+  } else if (key === "3") {
+    connection.write("Say: Good Game");
   }
 };
 
