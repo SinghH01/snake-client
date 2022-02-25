@@ -5,5 +5,7 @@ const connect = require("./client");
 const setupInput = require("./input");
 
 console.log('Connection ...');
-connect();
-setupInput();
+let conn = connect();
+
+// pass TCP connection object to the function
+setupInput(conn);
