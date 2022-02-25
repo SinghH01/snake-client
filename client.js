@@ -1,11 +1,12 @@
+//Importing net and constants
 const net = require('net');
+const { IP, PORT } = require("./constants"); 
 
 //Establish conection with game server
-
 const connect = function() {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   // Change incoming data to utf8
@@ -15,9 +16,6 @@ const connect = function() {
   conn.on('connect', () => {
     console.log("Successfully connected to game server");
     conn.write('Name: H.S');
-
-    //conn.write("Move: up");
-    
   });
   
   //Handle incoming data and console.log it for the player
