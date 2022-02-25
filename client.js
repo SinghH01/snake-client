@@ -10,8 +10,14 @@ const connect = function() {
 
   // Change incoming data to utf8
   conn.setEncoding('utf8');
+
+  // Print a message as soon as connection is established
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+    conn.write('Name: H.S');
+  });
   
-  //function to handle incoming data and console.log it for the player
+  //Handle incoming data and console.log it for the player
   conn.on("data", (data) => {
     console.log(data);
   });
