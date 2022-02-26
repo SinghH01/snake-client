@@ -8,7 +8,7 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["Start game with a name sent to server"](./screenshots/game.png
+!["Start game with a name sent to server"](./screenshots/game.png)
 !["console log"](./screenshots/console.png) 
 
 
